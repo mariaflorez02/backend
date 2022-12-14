@@ -5,35 +5,32 @@
 package com.app.movie.entities;
 
 
-import java.io.Serializable;
-
-import javax.persistence.Column;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.io.Serializable;
+import java.util.List;
 
-@Document("category")
+
+@Document("List")
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Category implements Serializable {
+public class List_Movies implements Serializable {
 
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
     private String id;
-    private String name;
-    private String description;
+    private List<Client> nameMovie;
+    private String Client;
     
-    //@OneToMany(cascade={CascadeType.PERSIST},mappedBy="category")
-    //@JsonIgnoreProperties("category")
-    //private List<Quadbike> quadbikes;
+
     
     
     
